@@ -33,10 +33,5 @@ if uploaded_file:
         x_col=st.selectbox("Select X-axis",df.columns)
         y_col=st.selectbox("Select Y-axis",df.columns)
         st.plotly_chart(px.scatter(df,x=x_col,y=y_col,color=df.columns[-1]))
-
     st.subheader("Download Cleaned Data")
-    st.download_button("Download CSV", df.to_csv(index=False),"cleaned_data.csv")
-
-    st.subheader("Combined Visualizations")
-    image = Image.open("assets/plots.png")
-    st.image(image,caption="Box, Histogram, Pie,and Scatter Plots",use_column_width=True)
+    st.download_button("Download CSV", df.to_csv(index=False), "cleaned_data.csv")
