@@ -30,3 +30,7 @@ if uploaded_file:
         st.plotly_chart(px.pie(df,names=col))
     st.subheader("Download Cleaned Data")
     st.download_button("Download CSV", df.to_csv(index=False),"cleaned_data.csv")
+    from PIL import Image
+    st.subheader("Combined Visualizations")
+    image = Image.open("assets/plots.png")
+    st.image(image, caption="Box, Histogram, Pie, and Scatter Plots", use_column_width=True)
